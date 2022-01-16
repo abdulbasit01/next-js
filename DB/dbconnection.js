@@ -6,11 +6,11 @@ async function dbConnect() {
         console.log('mongoose is already connected')
         return
     }
-    const connection = await mongoose.connect(process.env.MORNGO_URI, {
+    const connection = await mongoose.connect("mongodb+srv://abdulbasit:pass1234@cluster0.ib0wm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
-    connection.isConnected = db.connections[0].readyState
+    connection.isConnected = connection.connections[0].readyState
 }
 
 export default dbConnect
